@@ -1,17 +1,23 @@
-import React from 'react'
+import * as React from 'react'
 import { navigateTo } from 'gatsby-link'
 import { compact, uniq, kebabCase } from 'lodash'
-import wordcloud from 'wordcloud'
+import { MarkdownRemarkConnection } from '../graphql-types'
 
-export default class Tags extends React.Component {
+interface TagsProps {
+    data: {
+        allMarkdownRemark: MarkdownRemarkConnection
+    }
+}
+
+export default class Tags extends React.PureComponent<TagsProps, void> {
 
     componentDidMount() {
         const wordcloud = require('wordcloud')
         const tagsCloud = this.props.data.allMarkdownRemark.edges
-            .reduce((tags, { node }) => 
+            .reduce((tags: string[], { node }) => 
                 compact(uniq(tags.concat(node.frontmatter.tags)))
             , [])
-            .reduce((cloud, item) => {
+            .reduce((cloud: any[], item: string) => {
                 cloud.push([item, Math.floor(Math.random() * 11 + 40)])
                 return cloud
             }, [])
@@ -21,7 +27,7 @@ export default class Tags extends React.Component {
             { 
                 fontFamily: 'Finger Paint, cursive, sans-serif',
                 list: tagsCloud,
-                click: (item) => navigateTo(`/tags/${kebabCase(item[0])}`) 
+                click: (item: string) => navigateTo(`/tags/${kebabCase(item[0])}`) 
             }
         );
     }

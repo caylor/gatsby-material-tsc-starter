@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { navigateTo } from 'gatsby-link'
 import { IconButton, Drawer, Avatar, List, ListItem, Divider } from 'material-ui'
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
@@ -7,7 +7,7 @@ import ContentArchive from 'material-ui/svg-icons/content/archive'
 import ActionClass from 'material-ui/svg-icons/action/class'
 import SocialPerson from 'material-ui/svg-icons/social/person'
 import ContentLink from 'material-ui/svg-icons/content/link'
-import navBg from '../../static/nav-bg.png'
+import * as navBg from '../../static/nav-bg.png'
 
 export default class Nav extends React.Component {
 
@@ -15,13 +15,13 @@ export default class Nav extends React.Component {
         navVisible: false
     }
 
-    toggleDrawer(visible) {
+    toggleDrawer() {
         this.setState({
             navVisible: !this.state.navVisible
         })
     }
 
-    routeTo(route) {
+    routeTo(route: string) {
         navigateTo(route);
         this.toggleDrawer();
     }
@@ -35,7 +35,7 @@ export default class Nav extends React.Component {
                 <Drawer 
                     docked={false} 
                     open={this.state.navVisible}
-                    onRequestChange={(navVisible) => this.setState({navVisible})}
+                    onRequestChange={(navVisible: boolean) => this.setState({navVisible})}
                 >
                     <div style={{height: 160, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${navBg})`, backgroundSize: 'auto 180px'}}>
                         <Avatar size={60} style={{margin: '0 auto'}}>C</Avatar>

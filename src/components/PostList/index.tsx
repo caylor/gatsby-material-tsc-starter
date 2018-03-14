@@ -1,10 +1,17 @@
-import React from 'react'
+import * as React from 'react'
 import { Card, CardActions, CardHeader, CardText, FlatButton } from 'material-ui'
+import { MarkdownRemarkConnection } from '../../graphql-types'
 
-export default ({ children, data }) => {
+interface PostListProps {
+    data: {
+        allMarkdownRemark: MarkdownRemarkConnection
+    }
+}
+
+export default (props: PostListProps) => {
     return (
         <div>
-            {data.allMarkdownRemark.edges.map(({ node }) => 
+            {props.data.allMarkdownRemark.edges.map(({ node }) => 
                 <Card key={node.id} style={{marginBottom: '20px'}}>
                     <CardHeader
                         title={node.frontmatter.title}

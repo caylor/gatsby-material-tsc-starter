@@ -6,9 +6,32 @@
   version "4.6.2"
   resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
 
+"@types/lodash@^4.14.104":
+  version "4.14.104"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.104.tgz#53ee2357fa2e6e68379341d92eb2ecea4b11bb80"
+
+"@types/material-ui@^0.21.1":
+  version "0.21.1"
+  resolved "http://registry.npm.taobao.org/@types/material-ui/download/@types/material-ui-0.21.1.tgz#ddb6aaa7659cbf58b448c405e4872def2650cbab"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-addons-linked-state-mixin" "*"
+
 "@types/node@*":
   version "9.4.6"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-9.4.6.tgz#d8176d864ee48753d053783e4e463aec86b8d82e"
+
+"@types/react-addons-linked-state-mixin@*":
+  version "0.14.19"
+  resolved "http://registry.npm.taobao.org/@types/react-addons-linked-state-mixin/download/@types/react-addons-linked-state-mixin-0.14.19.tgz#7ef00a5618a089da4a99e1f58c9aa4c1781d46d5"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-helmet@^5.0.5":
+  version "5.0.5"
+  resolved "http://registry.npm.taobao.org/@types/react-helmet/download/@types/react-helmet-5.0.5.tgz#30a12b0431732a20882f0fa9b75bf56ff91700d3"
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-router-dom@^4.2.2":
   version "4.2.4"
@@ -2873,6 +2896,15 @@ engine.io@~3.1.0:
   optionalDependencies:
     uws "~9.14.0"
 
+enhanced-resolve@^3.0.0:
+  version "3.4.1"
+  resolved "http://registry.npm.taobao.org/enhanced-resolve/download/enhanced-resolve-3.4.1.tgz#0421e339fd71419b3da13d129b3979040230476e"
+  dependencies:
+    graceful-fs "^4.1.2"
+    memory-fs "^0.4.0"
+    object-assign "^4.0.1"
+    tapable "^0.2.7"
+
 enhanced-resolve@~0.9.0:
   version "0.9.1"
   resolved "http://registry.npm.taobao.org/enhanced-resolve/download/enhanced-resolve-0.9.1.tgz#4d6e689b3725f86090927ccc86cd9f1635b89e2e"
@@ -3662,6 +3694,14 @@ gatsby-plugin-sharp@^1.6.34:
     progress "^1.1.8"
     sharp "^0.19.1"
     svgo "^0.7.2"
+
+gatsby-plugin-typescript@^1.4.18:
+  version "1.4.18"
+  resolved "http://registry.npm.taobao.org/gatsby-plugin-typescript/download/gatsby-plugin-typescript-1.4.18.tgz#8af3488006868c41ee67a71d949a628db5633f2c"
+  dependencies:
+    babel-runtime "^6.26.0"
+    ts-loader "^2.0.3"
+    typescript "^2.2.1"
 
 gatsby-react-router-scroll@^1.0.12:
   version "1.0.12"
@@ -5919,16 +5959,16 @@ memory-fs@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.2.0.tgz#f2bb25368bc121e391c2520de92969caee0a0290"
 
-memory-fs@~0.3.0:
-  version "0.3.0"
-  resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.3.0.tgz#7bcc6b629e3a43e871d7e29aca6ae8a7f15cbb20"
+memory-fs@^0.4.0, memory-fs@~0.4.1:
+  version "0.4.1"
+  resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
   dependencies:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
-memory-fs@~0.4.1:
-  version "0.4.1"
-  resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
+memory-fs@~0.3.0:
+  version "0.3.0"
+  resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.3.0.tgz#7bcc6b629e3a43e871d7e29aca6ae8a7f15cbb20"
   dependencies:
     errno "^0.1.3"
     readable-stream "^2.0.1"
@@ -9325,6 +9365,10 @@ tapable@^0.1.8, tapable@~0.1.8:
   version "0.1.10"
   resolved "http://registry.npm.taobao.org/tapable/download/tapable-0.1.10.tgz#29c35707c2b70e50d07482b5d202e8ed446dafd4"
 
+tapable@^0.2.7:
+  version "0.2.8"
+  resolved "http://registry.npm.taobao.org/tapable/download/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
+
 tar-fs@^1.13.0:
   version "1.16.0"
   resolved "http://registry.npm.taobao.org/tar-fs/download/tar-fs-1.16.0.tgz#e877a25acbcc51d8c790da1c57c9cf439817b896"
@@ -9556,6 +9600,15 @@ trough@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/trough/download/trough-1.0.1.tgz#a9fd8b0394b0ae8fff82e0633a0a36ccad5b5f86"
 
+ts-loader@^2.0.3:
+  version "2.3.7"
+  resolved "http://registry.npm.taobao.org/ts-loader/download/ts-loader-2.3.7.tgz#a9028ced473bee12f28a75f9c5b139979d33f2fc"
+  dependencies:
+    chalk "^2.0.1"
+    enhanced-resolve "^3.0.0"
+    loader-utils "^1.0.2"
+    semver "^5.0.1"
+
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "http://registry.npm.taobao.org/tty-browserify/download/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -9588,6 +9641,10 @@ type-of@^2.0.1:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^2.2.1:
+  version "2.7.2"
+  resolved "http://registry.npm.taobao.org/typescript/download/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"

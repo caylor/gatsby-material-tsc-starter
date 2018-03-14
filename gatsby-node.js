@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 .forEach(({ node }) => {
                     createPage({
                         path: node.fields.slug,
-                        component: slash(path.resolve('./src/templates/blog-post.jsx')),
+                        component: slash(path.resolve('./src/templates/blog-post.tsx')),
                         context: {
                             slug: node.fields.slug
                         }
@@ -69,7 +69,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 .forEach(tag => {
                     createPage({
                         path: `/tags/${kebabCase(tag)}/`,
-                        component: slash(path.resolve('./src/templates/tags-page.jsx')),
+                        component: slash(path.resolve('./src/templates/tags-page.tsx')),
                         context: {
                             tag
                         }

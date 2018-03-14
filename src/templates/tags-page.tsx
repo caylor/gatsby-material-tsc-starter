@@ -1,15 +1,16 @@
-import React from 'react'
-import { Card, CardActions, CardHeader, CardText, FlatButton } from 'material-ui'
+import * as React from 'react'
 import PostList from '../components/PostList'
 
 export default PostList
 
-export const query = graphql`
-    query IndexQuery {
+export const pageQuery = graphql`
+    query CategoryQuery($tag: String) {
         allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
             filter: {
-                fileAbsolutePath: { regex: "/blog/post/" }
+                frontmatter: {
+                    tags: { in: [$tag] }
+                },
             }
         ) {
             totalCount

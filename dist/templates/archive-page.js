@@ -1,16 +1,14 @@
-import React from 'react'
-import PostList from '../components/PostList'
-
-export default PostList
-
-export const pageQuery = graphql`
-    query CategoryQuery($tag: String) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const PostList_1 = require("../components/PostList");
+exports.default = PostList_1.default;
+exports.pageQuery = graphql `
+    query ArchiveQuery($archive: String) {
         allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
             filter: {
                 frontmatter: {
-                    tags: { in: [$tag] }
-                },
+                    date: { eq: $archive }
+                }
             }
         ) {
             totalCount
@@ -29,4 +27,5 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;
+//# sourceMappingURL=archive-page.js.map

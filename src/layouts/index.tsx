@@ -1,16 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import Helmet from 'react-helmet'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import Nav from '../components/Nav'
 import './index.css'
 
-export default ({ children, data }) => (
+interface LayoutProps {
+    data: {
+        site: {
+            siteMetadata: {
+                title: string
+            }
+        }
+    }
+    children: any
+}
+
+export default (props: LayoutProps) => (
     <MuiThemeProvider>
         <div>
             <Helmet
-                title={data.site.siteMetadata.title}
+                title={props.data.site.siteMetadata.title}
                 meta={[
                     { name: 'description', content: 'Sample' },
                     { name: 'keywords', content: 'sample, something' },
@@ -24,7 +34,7 @@ export default ({ children, data }) => (
                   paddingTop: '100px',
                 }}
             >
-                {children()}
+                {props.children()}
             </div>
         </div>
     </MuiThemeProvider>

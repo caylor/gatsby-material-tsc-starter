@@ -1,12 +1,12 @@
-import React from 'react'
+import * as React from 'react'
 import { Avatar, Chip } from 'material-ui'
 import links from '../data/links'
 
 export default () => {
     return (
-        <div style={style.wrapper}>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
             {
-                links.map((link, index) => 
+                links.map((link: any, index: number) => 
                     <Chip 
                         key={index} 
                         labelStyle={style.chipLabel}
@@ -23,10 +23,6 @@ export default () => {
 }
 
 const style = {
-    wrapper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
     chip: {
         backgroundColor: '#fff',
         border: '1px solid #D3D3D3',
